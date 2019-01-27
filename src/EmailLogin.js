@@ -93,16 +93,16 @@ class EmailLogin extends Component {
   //     return str;
   //   };
   render() {
-    // let re = "";
-    // re = this.state.data.map((items, index) => {
-    //   return (
-    //     <div key={index}>
-    //       <span>{items.emailId}</span>
-    //     </div>
-    //   );
-    // });
-    // console.log(re);
-    // console.log("re");
+    let re = "";
+    re = this.state.data.map((items, index) => {
+      return (
+        <div key={index}>
+          <span>{items.emailId}</span>
+        </div>
+      );
+    });
+    console.log(re);
+    console.log("re");
 
     return (
       <div>
@@ -135,7 +135,7 @@ class EmailLogin extends Component {
               return items;
             })}
           </div> */}
-          {/* {re} */}
+          {re}
           {/* <table>
             <tbody>{a}</tbody>
           </table> */}

@@ -3,8 +3,8 @@ import React, { Component } from "react";
 // Needed for onTouchTap
 // http://stackoverflow.com/a/34015469/988941
 import "./App.css";
-// import Loginscreen from "./Loginscreen";
-import EmailId from "./EmailLogin";
+import Loginscreen from "./Loginscreen";
+// import EmailId from "./EmailLogin";
 
 // injectTapEventPlugin();
 
@@ -18,29 +18,32 @@ class App extends Component {
     };
   }
   componentWillMount() {
-    // var loginPage =[];
-    // loginPage.push(<Loginscreen parentContext={this}/>);
-    // this.setState({
-    //               loginPage:loginPage
-    //                 })
-    var emailId = [];
-    emailId.push(<EmailId parentContext={this} />);
+    var loginPage = [];
+    loginPage.push(<Loginscreen parentContext={this} />);
     this.setState({
-      emailId: emailId
+      loginPage: loginPage
     });
-    // if(response.data.code == 200){
+    // var emailId = [];
+    // emailId.push(<EmailId parentContext={this} />);
+    // this.setState({
+    //   emailId: emailId
+    // });
+    // if (response.data.code == 200) {
     //   console.log("Login successfull");
-    //   var uploadScreen=[];
-    //   uploadScreen.push(<UploadScreen appContext={self.props.appContext}/>)
-    //   self.props.appContext.setState({loginPage:[],uploadScreen:uploadScreen})
-    //   }
+    //   var uploadScreen = [];
+    //   uploadScreen.push(<UploadScreen appContext={self.props.appContext} />);
+    //   self.props.appContext.setState({
+    //     loginPage: [],
+    //     uploadScreen: uploadScreen
+    //   });
+    // }
   }
   render() {
     return (
       <div className="App">
-        {/* {this.state.loginPage}
-        {this.state.uploadScreen} */}
-        {this.state.emailId}
+        {this.state.loginPage}
+        {this.state.uploadScreen}
+        {/* {this.state.emailId} */}
       </div>
     );
   }

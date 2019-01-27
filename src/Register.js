@@ -14,7 +14,8 @@ class Register extends Component {
       first_name: "",
       last_name: "",
       email: "",
-      password: ""
+      password: "",
+      errorMessage: ""
     };
   }
   handleClick(event) {
@@ -56,11 +57,15 @@ class Register extends Component {
       });
   }
   handleChange() {
-    if (this.state.first_name == "") {
+    if (this.state.first_name.length == "") {
+      this.setState({
+        errorMessage: "please fill name"
+      });
       return false;
     }
   }
   render() {
+    let toottipPop = "kb-tt-err kb-tt-err-hover ";
     return (
       <div>
         <MuiThemeProvider>
@@ -73,11 +78,15 @@ class Register extends Component {
                 this.setState({ first_name: newValue })
               }
             />
-            <Snackbar
+            {/* <Snackbar
               message={"please fill the first name"}
               open={true}
               onChange={() => this.handleChange()}
-            />
+            /> */}
+
+            <span onChange={() => this.handleChange()}>
+              {this.state.errorMessage}
+            </span>
 
             <br />
             <TextField
