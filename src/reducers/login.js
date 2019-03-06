@@ -1,6 +1,7 @@
 export default function reducer(
   state = {
-    employeeList: null
+    employeeList: null,
+    error: null
   },
   action
 ) {
@@ -19,10 +20,12 @@ export default function reducer(
     }
     case "FETCH_EMPLOYEE_REJECTED": {
       console.log("FETCH_EMPLOYEE_REJECTED");
+
       return {
         ...state,
         fetched: true,
         fetching: false,
+        // error: "Something Went wrong please try again!"
         error: action.payload
       };
     }

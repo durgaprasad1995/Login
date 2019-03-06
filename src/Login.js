@@ -12,7 +12,8 @@ import axios from "axios";
 function mapStateToProps(store) {
   // console.log("---sot", store);
   return {
-    employeeList: store.login.employeeList //store.reducer.reducername
+    employeeList: store.login.employeeList, //store.reducer.reducername
+    error: store.login.error
   };
 }
 
@@ -30,7 +31,8 @@ class Login extends Component {
       username: "",
       password: "",
       data: [],
-      Listing: []
+      Listing: [],
+      erromessage: null
     };
   }
   handleClick(event) {}
@@ -79,6 +81,18 @@ class Login extends Component {
         });
       }
     }
+    // if (nextprops.error !== null) {
+    //   self.setState({
+    //     erromessage: nextprops.error
+    //   });
+    // }
+
+    if (nextprops.error == 500) {
+      self.setState({
+        erromessage: "Something went wrong please come back after some time!"
+      });
+    }
+
     console.log(
       "respn=============",
       nextprops.employeeList.results
@@ -119,7 +133,7 @@ class Login extends Component {
               style={style}
               onClick={event => this.handleClick(event)}
             />
-
+            <div>{this.state.erromessage}</div>
             <ul>
               {this.state.data.map((items, index) => {
                 return (
