@@ -2,6 +2,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+Please refer this link if you forget
+
+https://medium.com/technoetics/create-basic-login-forms-using-create-react-app-module-in-reactjs-511b9790dede
+
+this both are linked with db folder name is connectingDb
+
+you can refer this https://medium.com/technoetics/handling-user-login-and-registration-using-nodejs-and-mysql-81b146e37419
 In the project directory, you can run:
 
 ### `npm start`
@@ -42,3 +49,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+
+
